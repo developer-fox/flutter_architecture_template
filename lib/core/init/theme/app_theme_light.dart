@@ -15,6 +15,7 @@ class AppThemeLight{
   // uygulamada kullanilacak renkler bu sekilde belirtilmistirç
   //? AppThemeLight.instance.theme.ColorScheme.<attribute_name>
   ThemeData get theme => ThemeData(
+    canvasColor: Colors.red,
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
       primary: Colors.blue,

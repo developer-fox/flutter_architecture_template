@@ -1,8 +1,11 @@
 
 import 'package:company_app/core/base/view/base_view.dart';
+import 'package:company_app/core/constants/enums/app_theme_enum.dart';
+import 'package:company_app/core/init/theme/theme_manager.dart';
 import 'package:company_app/view/architecture_testing/test_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 import '../../core/base/state/base_state.dart';
 import '../../core/constants/navigation/navigation_constants.dart';
@@ -32,6 +35,12 @@ class MainViewState extends BaseState<MainView> {
                   onPressed: () {
                     NavigationService.instance.navigateToPage(path: NavigationConstants.TEST_VIEW, data: Example(content: "second try"));
                   },
+                ),
+                ElevatedButton(
+                  child: Text("change theme"),
+                  onPressed: () {
+                    Provider.of<ThemeNotifier>(context, listen: false).changeValue(AppThemes.DARK);
+                  }
                 ),
               ],
             ),
